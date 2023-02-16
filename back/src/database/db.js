@@ -1,4 +1,4 @@
-const mongoose = require("mongoose");
+import mongoose from "mongoose";
 
 
 
@@ -13,5 +13,4 @@ const connetcDatabase = () =>{
         .then(() => console.log("mongoDB atlas connected"))
         .catch((error) => console.log(error))
 };
-
-module.exports = connetcDatabase;
+export default connetcDatabase;

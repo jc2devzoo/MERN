@@ -1,12 +1,13 @@
-const express = require("express");
-const { connect } = require("mongoose");
-const app = express();
-const connetcDatabase = require("./src/database/db");
+import express, { json } from "express";
+import { connect } from "mongoose";
 
-const userRoute = require("./src/routes/user.route");
+const app = express();
+import connetcDatabase from "./src/database/db.js";
+
+import userRoute from "./src/routes/user.route.js";
 
 connetcDatabase()
-app.use(express.json())
+app.use(json())
 
 app.use("/user", userRoute);
 
