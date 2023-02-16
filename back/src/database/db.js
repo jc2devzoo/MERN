@@ -7,7 +7,7 @@ const connetcDatabase = () =>{
 
     mongoose.set("strictQuery", true);
     mongoose.connect(
-        "mongodb+srv://juliorocha:Laranja123@cluster0.qztckn7.mongodb.net/?retryWrites=true&w=majority",
+          process.env.MONGODB_URI ,
         { useUnifiedTopology: true}
         )
         .then(() => console.log("mongoDB atlas connected"))

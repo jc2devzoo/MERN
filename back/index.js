@@ -1,5 +1,8 @@
 import express, { json } from "express";
 import { connect } from "mongoose";
+import dotenv from "dotenv"
+
+dotenv.config();
 
 const app = express();
 import connetcDatabase from "./src/database/db.js";
