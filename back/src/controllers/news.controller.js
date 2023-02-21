@@ -18,7 +18,7 @@ const create = async (req, res) =>{
             id:"objectidfake",
         })
 
-        res.send(201);
+        res.sendStatus(201);
     } catch(err) {
         res.status(500).send({message: err.message});
     }
