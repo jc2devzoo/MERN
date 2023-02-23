@@ -2,9 +2,8 @@ import { createService, findAllService } from "../services/news.service.js";
 
 
 
-const create = async (req, res) =>{
+const create = async (req, res) => { 
     try {
-
         const {title, text, banner} = req.body
 
         if(!title || !banner || !text) {
@@ -15,7 +14,7 @@ const create = async (req, res) =>{
             title,
             text,
             banner,
-            user:{_id: "63e2ef4fa5386b059be8ec13"},
+            user: req.userId,
         })
 
         res.sendStatus(201);
@@ -25,7 +24,7 @@ const create = async (req, res) =>{
 
 };
 
-const findAll = async (req, res) =>{
+const findAll = async (req, res) => {
     try {
         const news = await findAllService();
         if (news.length === 0){
@@ -38,7 +37,7 @@ const findAll = async (req, res) =>{
     }catch (err){
         res.status(500).send({message: err.message})
     }
-}
+};
 
 export  {
     create, findAll 
