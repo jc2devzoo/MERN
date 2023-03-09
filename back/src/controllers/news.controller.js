@@ -89,7 +89,17 @@ const topNews = async (req, res) =>{
 
         }
     } catch (err) {
-        res.status(500).send({ message: err.message })
+            res.status(500).send({news:{
+            id: news._id,
+            title: news.title,
+            text: news.text,
+            banner: news.banner,
+            likes: news.likes,
+            comments: news.comments,
+            userName: news.user.name,
+            userAvatar: news.user.avatar,
+            }
+            })
     }
 };
 
